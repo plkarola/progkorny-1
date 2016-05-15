@@ -20,7 +20,7 @@ import javafx.scene.control.cell.MapValueFactory;
 
 public class XMLParserIntImpl implements XMLParserInt {
 
-	File xmlfile = new File("C:/Users/PunkBoy/workspace/punkboy-scool-game/InGame/InGame.xml");
+	File xmlfile = new File("../InGame/InGame.xml");
 	public String basedir(){
 	
 		System.getProperties().list(System.out);

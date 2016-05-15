@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>progtech.progkorny.beadando</groupId>
   <artifactId>punkboy-scool-game</artifactId>
-  <version>1.0</version>
+  <version>1.10</version>
  
  
   
@@ -81,16 +81,7 @@
 		</plugin> 
 
 
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-scm-plugin</artifactId>
-			<version>1.9.4</version>
-			<configuration>
-          <username>punkboy333</username>
-          <password>SkullSword</password>
-        </configuration>
-			
-		</plugin>
+		
 		
   	</plugins>
   </build>
