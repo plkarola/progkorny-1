@@ -2,9 +2,11 @@ package uzletilogika;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
+
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,19 +18,20 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import javafx.scene.control.cell.MapValueFactory;
 
-public class XMLParserIntImpl implements XMLParserInt {
+
+public class XMLParserImp implements XMLParser {
 
 	File xmlfile = new File("../InGame/InGame.xml");
 	public String basedir(){
 	
-		System.getProperties().list(System.out);
-	return	System.getProperties().getProperty("basedir").toString();
+
+	String fileinput= System.getProperties().getProperty("user.dir").toString();
+	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
 	
-	
+	xmlfile=new File(path.toString());
+	return  path.toString();
 	}
-	//File xmlfile = new File(basedir()+"InGame/InGame.xml");
 	
 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder documentBuldar;

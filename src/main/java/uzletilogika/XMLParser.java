@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.w3c.dom.NodeList;
 
-public interface XMLParserInt {
+public interface XMLParser {
 
 	public String basedir();
 	public NodeList openFile(String name);

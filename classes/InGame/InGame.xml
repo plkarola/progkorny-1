@@ -1,0 +1,139 @@
+<Game>
+	<Situation id="1">
+		<status>Start</status>
+		<Question id = "1">
+		<p>2016-os évet irunk egyetemista vagy PTI szakon.</p>
+		<p>Feladatod teljesiteni a progtec és programozási környezetek tantárgyat</p>
+		<p>Sok sikert</p>
+		</Question>
+<Ansvers id="1">
+	<Ansver  id="1">
+	<p></p>
+	<inteligencia></inteligencia>
+	<energi></energi>
+	<fuel></fuel>
+	<categori> </categori>
+	</Ansver>
+</Ansvers>
+<picture>uri=""</picture>
+</Situation>
+	<Situation id="2">
+		<status>1.nap</status>
+		<Question id="1">
+		<p>Reggel van felkelsz mihez kezdesz?</p>
+		</Question>
+		<Question id="2">
+		<p>Még mindég beérhetsz órára mihez kezdesz?</p>
+		</Question>
+	<Ansvers id="1">
+		<Ansver id="1">
+			<p>Bemegyek gyakorlatra hogy ne hiányozak</p>
+			<inteligencia>+5</inteligencia>
+			<energi>-5</energi>
+			<fuel>-10</fuel>
+			<categori>true</categori>		
+		</Ansver>
+		<Ansver id="2">
+			<p>Reggelizek egyet ne legyek éhes</p>
+			<inteligencia>0</inteligencia>
+			<energi>-1</energi>
+			<fuel>+10</fuel>
+			<categori>2 2</categori>
+		</Ansver>
+		<Ansver id="3">
+			<p>Lemegyek rágyujtok hátha felkelt más is ilyen korán</p>
+			<inteligencia>0</inteligencia>
+			<energi>-1</energi>
+			<fuel>-1</fuel>
+			<categori>2 4</categori>
+		</Ansver>
+		<Ansver id="4">
+			<p>Elgépezem a napot</p>
+			<inteligencia>-5</inteligencia>
+			<energi>-24</energi>
+			<fuel>-15</fuel>
+			<categori>3 1</categori>
+		</Ansver>				
+	</Ansvers>
+	<Ansvers id="2">
+		<Ansver id="1">
+			<p>Bemegyek gyakorlatra hogy ne hiányozak</p>
+			<inteligencia>+5</inteligencia>
+			<energi>-5</energi>
+			<fuel>-10</fuel>
+			<categori>true</categori>		
+		</Ansver>
+		<Ansver id="2">
+			<p>Vissza alszom</p>
+			<inteligencia>0</inteligencia>
+			<energi>-1</energi>
+			<fuel>+10</fuel>
+			<categori>3 2</categori>
+		</Ansver>
+		<Ansver id="3">
+			<p>Lemegyek rágyujtok hátha felkelt más is ilyen korán</p>
+			<inteligencia>0</inteligencia>
+			<energi>-1</energi>
+			<fuel>-1</fuel>
+			<categori>2 4</categori>
+		</Ansver>
+		<Ansver id="4">
+			<p>Elgépezem a napot</p>
+			<inteligencia>-5</inteligencia>
+			<energi>-24</energi>
+			<fuel>-15</fuel>
+			<categori>3 1</categori>
+		</Ansver>
+	</Ansvers>
+<picture>uri=""</picture>	
+</Situation>
+<Situation id="3">
+<status>2. nap</status>
+<Question  id="1">
+<p>Reggel van de még nem aludtál mert elgépezted a napot</p></Question>
+<Ansvers id="1">
+	<Ansver id="1">
+	<p>Bemegyek dolgozni</p>
+	<energi>-10</energi>
+	<fuel>-5</fuel>
+	<inteligencia>0</inteligencia>
+	<categori>4 2</categori>
+	</Ansver>
+</Ansvers>
+<Question  id="2">
+<p>Kipihented magad naplemente mihez kezdesz?</p></Question>
+<Ansvers id="2">
+	<Ansver id="1">
+	<p>Bulizok egyet</p>
+	<energi>-10</energi>
+	<fuel>10</fuel>
+	<inteligencia>0</inteligencia>
+	<categori>4 2</categori>
+	</Ansver>
+	<Ansver id="2">
+		<p>Gépezek készülök zh-ra</p>
+		<energi>-5</energi>
+		<fuel>0</fuel>
+		<inteligencia>+15</inteligencia>	
+		<categori>4 1</categori>
+	</Ansver>
+</Ansvers>
+
+</Situation>
+<Situation id="4">
+<Question id = "2">
+<p>elfaradtal tegnap</p>
+</Question>
+<Ansvers id="2">
+<Ansver id="1">
+<p>lol</p>
+<energi>0</energi>
+<fuel>+4</fuel>
+<inteligencia>1</inteligencia>
+<categori>3 3</categori>
+</Ansver>
+</Ansvers>
+
+</Situation>
+
+</Game>

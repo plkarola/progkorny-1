@@ -18,14 +18,14 @@ public class Main {
 		
 		int situationid = 1;
 		int questionid = 1;
-		XMLParserIntImpl parser = new XMLParserIntImpl();
+		XMLParserImp parser = new XMLParserImp();
 		//System.out.println(parser.basedir());
 		Caracter caracter;
 		if (args.length > 0)
 			caracter = new Caracter(args[0]);
 		else
 			caracter = new Caracter("default");
-		
+		parser.basedir();
 		for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
 			System.out.println("\t\t"+parser.getQuestion(questionid, situationid).getQuestinoline().get(ii));
 		situationid++;
