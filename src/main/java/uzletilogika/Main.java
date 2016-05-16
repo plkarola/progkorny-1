@@ -67,9 +67,11 @@ public class Main {
 			String nexthope = ansvers.get(hope).getCategory();
 
 			if (nexthope.equals("true"))
-				finis(true ,caracter.getInteligent());
+				{finis(true ,caracter.getInteligent());
+				System.exit(0);}
 			else if (nexthope.equals("false"))
-				finis(false ,caracter.getInteligent());
+				{finis(false ,caracter.getInteligent());
+				System.exit(0);}
 			else {
 				String[] splitednexthope = nexthope.split(" ");
 				situationid = Integer.parseInt(splitednexthope[0]);
@@ -97,15 +99,20 @@ public class Main {
 
 	}
 
-	public static void finis(boolean win , int inteligent) {
+	public static String finis(boolean win , int inteligent) {
+		String str;
+		
 		if (win && inteligent>=100)
-			System.out.println("Sikeresen teljesiteted a tárgyakat");
+			str="Sikeresen teljesiteted a tárgyakat";
 		else if(!win)
-			System.out.println("Sikertelenül teljesitetted a tárgyakat");
+			str=("Sikertelenül teljesitetted a tárgyakat");
 		else
-			System.out.println("Eljutottál vizsgáig de az inteligenciád:"+inteligent
+			str=("Eljutottál vizsgáig de az inteligenciád:"+inteligent
 					+" tul kicsi minimum 100 kell ezért vizsgakurzusra kerültél");
-		System.exit(0);
+		System.out.println(str);
+		
+		
+		return str;
 	}
 
 	public static void beta() {

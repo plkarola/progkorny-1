@@ -22,7 +22,7 @@ import org.xml.sax.SAXException;
 
 public class XMLParserImp implements XMLParser {
 
-	File xmlfile = new File("../InGame/InGame.xml");
+	File xmlfile ;//= new File("../InGame/InGame.xml");
 	public String basedir(){
 	
 
@@ -46,19 +46,14 @@ public class XMLParserImp implements XMLParser {
 			doc = documentBuldar.parse(xmlfile);
 
 		
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		NodeList list = doc.getElementsByTagName(name);
 		return list;
-	}
+		} catch (Exception e) {
+			;
+			}
+		return null;
+		}
 
 	@SuppressWarnings("unused")
 	@Override
@@ -100,6 +95,7 @@ public class XMLParserImp implements XMLParser {
 		List<Ansver> ansvers = new ArrayList<Ansver>();
 		
 		NodeList nodelist1 = openFile("Situation");
+		try{
 		for(int i = 0 ; i<nodelist1.getLength();i++)
 		{
 			Node node = nodelist1.item(i);
@@ -125,15 +121,13 @@ public class XMLParserImp implements XMLParser {
 					 ansvers.add(ansver);
 					 }
 				 }
-				return ansvers;
-			}
+				return ansvers;}
 				}
-		}
-		
-		
-		
-	
-	}
+				}
+			}
+		}catch (Exception e) {
+					return null;
+				}
 		return null;
 	}
 }
