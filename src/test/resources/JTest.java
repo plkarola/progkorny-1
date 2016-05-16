@@ -14,7 +14,7 @@ import uzletilogika.*;
 public class JTest {
 
 	XMLParserImp xmlparser = new XMLParserImp();
-	Main main = new Main();
+	
 	@Before
 	public void inicialized(){
 		xmlparser.basedir();
@@ -37,11 +37,37 @@ public class JTest {
 	@Test
 	public void succesTest1(){
 		
-		assertEquals(true, main.finis(true, 101).equals("Sikeresen teljesiteted a tárgyakat"));
+		assertEquals(true, Main.finis(true, 101).equals("Sikeresen teljesiteted a tárgyakat"));
 	}
 	@Test
 	public void succesTest2(){
 		
-		assertEquals(true, main.finis(true, 99).equals("Eljutottál vizsgáig de az inteligenciád:99 tul kicsi minimum 100 kell ezért vizsgakurzusra kerültél"));
+		assertEquals(true, Main.finis(true, 99).equals("Eljutottál vizsgáig de az inteligenciád:99 tul kicsi minimum 100 kell ezért vizsgakurzusra kerültél"));
 	}
+	@Test
+	public void caracterTest(){
+		Caracter car = new Caracter("PB");
+		boolean carbool = false , carbool2=false , carbool3 = false;
+		if(car.getInteligent()==0 
+				&& car.getEnergy()==100 
+				&& car.getFuel()==100
+				&& car.getName().equals("PB"))
+			carbool=true;
+		car.setEnergy(1);
+		car.setInteligent(1);
+		car.setFuel(1);
+		
+		if(carbool && car.getEnergy()==101 && car.getFuel()==101 && car.getInteligent()==1)
+		carbool2=true;
+			if(carbool2 && car.toString().equals("Caracter \n"
+				+ "\tName=PB" 
+				+ "\n\tInteligent=1" 
+				+ "\n\tEnergy=101" 
+				+ "\n\tfuel=101" ))
+				carbool3=true;
+		assertEquals(true, carbool3);
+			
+		
+	}
+	
 }

@@ -30,8 +30,8 @@ public class XMLParserImp implements XMLParser {
 	
 	public String basedir(){
 				
-		Properties p = System.getProperties();
-		   p.list(System.out);
+		//Properties p = System.getProperties();
+		//   p.list(System.out);
 				
 	String fileinput= System.getProperties().getProperty("user.dir").toString();
 	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
