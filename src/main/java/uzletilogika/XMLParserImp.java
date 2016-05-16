@@ -6,12 +6,14 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -23,9 +25,14 @@ import org.xml.sax.SAXException;
 public class XMLParserImp implements XMLParser {
 
 	File xmlfile ;//= new File("../InGame/InGame.xml");
-	public String basedir(){
 	
-
+	
+	
+	public String basedir(){
+				
+		Properties p = System.getProperties();
+		   p.list(System.out);
+				
 	String fileinput= System.getProperties().getProperty("user.dir").toString();
 	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
 	
