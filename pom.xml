@@ -99,9 +99,7 @@
             </goals>
             <configuration>
               <rules>
-                <requireMavenVersion>
-                  <version>3.0.0</version>
-                </requireMavenVersion>
+                
                 <requireJavaVersion>
                   <version>1.8</version>
                 </requireJavaVersion>
