@@ -93,7 +93,6 @@
         <version>1.4.1</version>
         <executions>
           <execution>
-            <id>enforce-versions</id>
             <goals>
               <goal>enforce</goal>
             </goals>
