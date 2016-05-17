@@ -28,7 +28,12 @@ public class JTest {
 	@Test
 	public void getAnsverTest(){
 		
-		assertEquals(true,xmlparser.getAnsversToSituation(1, 1)==null);
+		assertEquals(true,xmlparser.getAnsversToSituation(xmlparser.getQuestion(1, 1).getId(), 1)==null);
+	}
+	@Test
+	public void getAnsverTest2(){
+		
+		assertEquals(true,xmlparser.getAnsversToSituation(2, 1).get(0).getId()==1);
 	}
 	@Test
 	public void openFileTest(){
@@ -84,5 +89,11 @@ public class JTest {
 		
 		assertEquals(true,m.engine(userName));
 	}
-	
+	@Test
+	public  void OverideMethodeTest(){
+		OverideMethode ov =new OverideMethode() {
+		};
+		assertEquals(true,ov.input()==null);
+	}
+
 }
