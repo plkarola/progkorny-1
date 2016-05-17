@@ -11,22 +11,22 @@ Apache Maven 3
 Java JDK 1.8 
 
 <h1>Installation and Usage</h1>
-<code></code>
+<code>
 git clone <link>https://github.com/punkboy333/progkorny.git</link>
 </code>
-<br/>
+<br>
 <code>
 cd progkorny
 </code>
-<br/>
+<br>
 </code>
 mvn install 
 <code>
-<br/>
+<br>
 <code>
 cd target
 </code>
-<br/>
+<br>
 <code>
 java -jar punkboy-school-game-1.10-jar-with-dependencies.jar
 </code>
