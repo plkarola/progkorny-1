@@ -1,4 +1,4 @@
-<p1>Introduction</p1>
+<h1>Introduction</h1>
 
 This project is a game, called PunkBoy School Game.  The main purpose of this project is to complete the requirements of the "Programozási környezetek" course.
 While gaming, you need to choose from a few reactions for a situation. 
