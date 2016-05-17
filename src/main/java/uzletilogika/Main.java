@@ -10,7 +10,7 @@ import javafx.beans.DefaultProperty;
 
 
 
-public class Main  extends OverideMethode{
+public class Main  {
 
 	OverideMethode ov;
 	
