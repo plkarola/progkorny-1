@@ -1,19 +1,19 @@
 package uzletilogika;
 
-import java.io.BufferedReader;
 
-import java.io.InputStreamReader;
+
+
 
 import java.util.List;
 
-import javafx.beans.DefaultProperty;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.core.joran.util.ConfigurationWatchListUtil;
 import java.net.URL;
-import java.net.URLDecoder;
+
 
 public class Main  {
 
@@ -155,6 +155,7 @@ public class Main  {
 	}
 
 	public  void beta() {
+		logger.info("Game-end:"+"A játék beta verziólya végetért");
 		System.out.println("A játék beta verziólya végetért");
 		
 	}
