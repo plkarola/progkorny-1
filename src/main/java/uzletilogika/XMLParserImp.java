@@ -23,7 +23,7 @@ import org.xml.sax.SAXException;
 
 public class XMLParserImp implements XMLParser {
 
-	File xmlfile ;//= new File("../InGame/InGame.xml");
+	public File xmlfile ;//= new File("../InGame/InGame.xml");
 	
 	
 	

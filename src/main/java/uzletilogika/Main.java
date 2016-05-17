@@ -7,14 +7,24 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 import javafx.beans.DefaultProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.core.joran.util.ConfigurationWatchListUtil;
+import java.net.URL;
+import java.net.URLDecoder;
 
 public class Main  {
 
 	OverideMethode ov ;
+	private static Logger	logger = LoggerFactory.getLogger(Main.class);
+	/**
+	 * The URL of the configuration file.
+	 */
+	private static final URL	configURL = ConfigurationWatchListUtil.getMainWatchURL((LoggerContext) LoggerFactory.getILoggerFactory());
 	
-	 public Main(){
+	public Main(){
 	 ov = new OverideMethode() {
 	};
 	 }
@@ -54,7 +64,7 @@ public class Main  {
 				hope = Integer.parseInt(ov.input()) - 1;
 				if(hope>i) continue;
 				}
-				catch(Exception e){System.out.println("Error number"); continue;}
+				catch(Exception e){logger.info("Error number"); continue;}
 				while (hope == -1) {
 					i = 0;
 					System.out.println(caracter);
@@ -67,7 +77,10 @@ public class Main  {
 					try{
 						hope = Integer.parseInt(ov.input()) - 1;
 						}
-						catch(Exception e){System.out.println("Error number"); continue;}
+						catch(Exception e){
+							logger.info("Error number");
+							
+						continue;}
 					if(hope>i) continue;
 						}
 				caracter.setEnergy(ansvers.get(hope).getEnergy());
@@ -90,6 +103,7 @@ public class Main  {
 						for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
 							System.out.println(parser.getQuestion(questionid, situationid).getQuestinoline().get(ii));
 					} catch (Exception e) {
+						logger.error("No question");
 						beta();
 						return false;
 					}
@@ -103,6 +117,7 @@ public class Main  {
 
 						}
 					} catch (Exception e) {
+						logger.error("No ansver");
 						beta();
 						return false;
 					}
@@ -116,7 +131,8 @@ public class Main  {
 		
 		Main main = new Main();
 		main.engine(args);
-		
+
+		logger.info("SuccesFull");
 		
 	   
 
@@ -133,7 +149,7 @@ public class Main  {
 			str=("Eljutottál vizsgáig de az inteligenciád:"+inteligent
 					+" tul kicsi minimum 100 kell ezért vizsgakurzusra kerültél");
 		System.out.println(str);
-		
+		logger.info("Game-end:"+str);
 		
 		return str;
 	}
