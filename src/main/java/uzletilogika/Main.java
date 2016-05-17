@@ -12,26 +12,12 @@ import javafx.beans.DefaultProperty;
 
 public class Main  {
 
-	OverideMethode ov;
+	OverideMethode ov ;
 	
 	 public Main(){
-		 ov=new OverideMethode() {
-			 @Override
-			 public String input() {
-				 try {
-						BufferedReader input = new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
-
-						String s = input.readLine();
-						System.out.println("My chose: " + s);
-
-						return s;
-					} catch (Exception e) {
-						;
-					}
-					return null;
-			 };
-		 }
-		;};
+	 ov = new OverideMethode() {
+	};
+	 }
 	
 	 public Main(OverideMethode ov){
 		this.ov=ov;

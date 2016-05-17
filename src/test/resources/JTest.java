@@ -89,11 +89,6 @@ public class JTest {
 		
 		assertEquals(true,m.engine(userName));
 	}
-	@Test
-	public  void OverideMethodeTest(){
-		OverideMethode ov =new OverideMethode() {
-		};
-		assertEquals(true,ov.input()==null);
-	}
+	
 
 }
