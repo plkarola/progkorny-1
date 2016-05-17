@@ -30,12 +30,14 @@ public class XMLParserImp implements XMLParser {
 	public String basedir(){
 				
 		//Properties p = System.getProperties();
-		//   p.list(System.out);
+		//   p.list(System.out);java.class.path
 				
+
 	String fileinput= System.getProperties().getProperty("user.dir").toString();
 	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
-	
 	xmlfile=new File(path.toString());
+	if(!xmlfile.isFile())
+		System.out.println("Please install game");
 	return  path.toString();
 	}
 	
@@ -56,7 +58,7 @@ public class XMLParserImp implements XMLParser {
 		NodeList list = doc.getElementsByTagName(name);
 		return list;
 		} catch (Exception e) {
-			;
+			System.out.println("Please Install Game");;
 			}
 		return null;
 		}
@@ -70,6 +72,7 @@ public class XMLParserImp implements XMLParser {
 		String status = null;
 		List<String> questions =new ArrayList<String>();
 		NodeList nodelist1 = openFile("Situation");
+		if(nodelist1!=null){
 		for(int i = 0 ; i<nodelist1.getLength();i++)
 		{
 			Node node = nodelist1.item(i);
@@ -90,7 +93,7 @@ public class XMLParserImp implements XMLParser {
 				}
 		}
 		
-		
+			}
 		return null;
 
 	}

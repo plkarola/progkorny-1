@@ -34,6 +34,7 @@ public class Main  {
 			else
 				caracter = new Caracter("default");
 			parser.basedir();
+			if(parser.getQuestion(questionid, situationid)!=null){
 			for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
 				System.out.println("\t\t"+parser.getQuestion(questionid, situationid).getQuestinoline().get(ii));
 			situationid++;
@@ -106,6 +107,7 @@ public class Main  {
 						return false;
 					}
 				}
+			  }
 			}
 			return true;
 	 }
