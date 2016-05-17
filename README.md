@@ -19,9 +19,9 @@ git clone <link>https://github.com/punkboy333/progkorny.git</link>
 cd progkorny
 </code>
 <br>
-</code>
-mvn install 
 <code>
+mvn install 
+</code>
 <br>
 <code>
 cd target
