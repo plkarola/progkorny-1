@@ -54,7 +54,7 @@
 	
   <build>
   <testSourceDirectory>
-  ${basedir}/src/test/resources/
+  ${basedir}/src/test/java/
   </testSourceDirectory>
   	<plugins>
   	<plugin>
