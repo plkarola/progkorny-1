@@ -1,4 +1,4 @@
-Introduction
+<p1>Introduction</p1>
 
 This project is a game, called PunkBoy School Game.  The main purpose of this project is to complete the requirements of the "Programozási környezetek" course.
 While gaming, you need to choose from a few reactions for a situation. 
@@ -14,9 +14,11 @@ Installation and Usage
 git clone https://github.com/punkboy333/progkorny.git
 cd progkorny
 mvn install 
-cd target
+scd target
 java -jar punkboy-school-game-1.10-jar-with-dependencies.jar
+
 Tests
+
 mvn test
 This command runs the JUnit test.
 License
