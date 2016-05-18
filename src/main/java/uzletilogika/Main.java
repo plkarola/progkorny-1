@@ -19,10 +19,6 @@ public class Main  {
 
 	OverideMethode ov ;
 	private static Logger	logger = LoggerFactory.getLogger(Main.class);
-	/**
-	 * The URL of the configuration file.
-	 */
-	private static final URL	configURL = ConfigurationWatchListUtil.getMainWatchURL((LoggerContext) LoggerFactory.getILoggerFactory());
 	
 	public Main(){
 	 ov = new OverideMethode() {

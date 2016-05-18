@@ -1,37 +1,43 @@
 package uzletilogika;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 
+/**
+ * This class implements the {@code XMLParser}. 
+ */
 
 public class XMLParserImp implements XMLParser {
 
-	public File xmlfile ;//= new File("../InGame/InGame.xml");
+	/**
+	 * This is document builder factory which sets up the document builder.  
+	 */
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	/**
+	 * This is the document builder that builds the XML file in memory. 
+	 */
+	DocumentBuilder documentBuldar;
 	
+	/**
+	 * This is the file which is used by the methods. 
+	 */
+	public File xmlfile ;
 	
-	
+	@Override
 	public String basedir(){
-				
-		//Properties p = System.getProperties();
-		//   p.list(System.out);java.class.path
-				
 
 	String fileinput= System.getProperties().getProperty("user.dir").toString();
 	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
@@ -41,8 +47,6 @@ public class XMLParserImp implements XMLParser {
 	return  path.toString();
 	}
 	
-	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	DocumentBuilder documentBuldar;
 	
 	@Override
 	public NodeList openFile( String name) {
@@ -63,7 +67,7 @@ public class XMLParserImp implements XMLParser {
 		return null;
 		}
 
-	@SuppressWarnings("unused")
+	
 	@Override
 	public Question getQuestion(int qid , int sid) {
 		
@@ -97,7 +101,7 @@ public class XMLParserImp implements XMLParser {
 		return null;
 
 	}
-
+	
 	@Override
 	public List<Ansver> getAnsversToSituation(int situationid, int questinid) {
 		
