@@ -6,30 +6,46 @@ package uzletilogika;
 
 import java.util.List;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.core.joran.util.ConfigurationWatchListUtil;
-import java.net.URL;
-
-
+/**
+ *This class contains the executable file and the main method. 
+ */
 public class Main  {
 
-	OverrideMethod ov ;
+	/**
+	 *The player gives the answer for the questions with this.  
+	 */
+	private OverrideMethod ov ;
+	/**
+	 *The logger creates log information of the {@code Main} class. 
+	 */
 	private static Logger	logger = LoggerFactory.getLogger(Main.class);
 	
+	/**
+	 *Constructs a {@code Main} object.
+	 */
 	public Main(){
 	 ov = new OverrideMethod() {
 	};
 	 }
-	
+	/**
+	 *Constructs a {@code Main} object.This constructor uses {@code ov}.
+	 *
+	 * @param ov who gives the answer
+	 */
 	 public Main(OverrideMethod ov){
 		this.ov=ov;
 		
 	}
-	
+	/**
+	 *Returns the method's correct ending. This method is the game's engine, 
+	 *contains the logical deduction of the game.  
+	 * 
+	 *@param args arguments object which contains the player's name
+	 *@return  the boolean value which tells method's correct ending
+	 */
 	 public boolean engine(String[] args){
 		 	int situationid = 1;
 			int questionid = 1;
@@ -122,7 +138,11 @@ public class Main  {
 			}
 			return true;
 	 }
-	 
+	 /**
+	  *The main method.
+	  *
+	  *@param args arguments object  
+	  */
 	public static void main(String[] args) {
 		
 		Main main = new Main();
@@ -133,7 +153,13 @@ public class Main  {
 	   
 
 	}
-
+	/**
+	 *Returns the game's result.
+	 * 
+	 *@param win indicates the games ending
+	 *@param intelligence the character's current intelligence
+	 *@return end game information 
+	 */
 	public  String finish(boolean win , int intelligence) {
 		String str;
 		
@@ -149,7 +175,9 @@ public class Main  {
 		
 		return str;
 	}
-
+	/**
+	 *Informs the player about the game's ending. 
+	 */
 	public  void beta() {
 		logger.info("Game-end:"+"A játék beta verziója véget ért");
 		System.out.println("A játék beta verziója véget ért");
