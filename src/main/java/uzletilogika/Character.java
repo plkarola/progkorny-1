@@ -4,12 +4,12 @@ package uzletilogika;
  *This class contains informations of the player's character.
  */
 
-public class Caracter {
+public class Character {
 
 	/**
 	 *The character's intelligence level. 
 	 */
-	private int inteligent;
+	private int intelligence;
 	/**
 	 *The character's intelligence level. 
 	 */
@@ -24,14 +24,14 @@ public class Caracter {
 	public String name;
 	
 	/**
-	 * Constructs a {@code Caracter} object.
+	 * Constructs a {@code Character} object.
 	 *
 	 * @param name the name of the character
 	 */
-	public Caracter(String name) {
+	public Character(String name) {
 		super();
 		this.name = name;
-		inteligent=0;
+		intelligence=0;
 		fuel=100;
 		energy=100;
 	}
@@ -40,16 +40,16 @@ public class Caracter {
 	 * 
 	 * @return the intelligence of the character
 	 */
-	public int getInteligent() {
-		return inteligent;
+	public int getIntelligence() {
+		return intelligence;
 	}
 	/**
 	 *Sets the character's intelligence. 
 	 * 
-	 * @param inteligent the intelligence of the character
+	 * @param intelligence the intelligence of the character
 	 */
-	public void setInteligent(int inteligent) {
-		this.inteligent += inteligent;
+	public void setIntelligence(int intelligence) {
+		this.intelligence += intelligence;
 	}
 	/**
 	 * Returns the character's energy.
@@ -95,11 +95,11 @@ public class Caracter {
 	
 	@Override
 	public String toString() {
-		return "Caracter \n"
+		return "Character \n"
 				+ "\tName=" + name
-				+ "\n\tInteligent=" + inteligent 
+				+ "\n\tIntelligence=" + intelligence 
 				+ "\n\tEnergy=" + energy 
-				+ "\n\tfuel=" + fuel ;
+				+ "\n\tFuel=" + fuel ;
 	}
 	
 	

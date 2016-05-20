@@ -17,28 +17,28 @@ import java.net.URL;
 
 public class Main  {
 
-	OverideMethode ov ;
+	OverrideMethod ov ;
 	private static Logger	logger = LoggerFactory.getLogger(Main.class);
 	
 	public Main(){
-	 ov = new OverideMethode() {
+	 ov = new OverrideMethod() {
 	};
 	 }
 	
-	 public Main(OverideMethode ov){
+	 public Main(OverrideMethod ov){
 		this.ov=ov;
 		
 	}
 	
 	 public boolean engine(String[] args){
-		 int situationid = 1;
+		 	int situationid = 1;
 			int questionid = 1;
 			XMLParserImp parser = new XMLParserImp();
-			Caracter caracter;
+			Character character;
 			if (args.length > 0)
-				caracter = new Caracter(args[0]);
+				character = new Character(args[0]);
 			else
-				caracter = new Caracter("default");
+				character = new Character("default");
 			parser.basedir();
 			if(parser.getQuestion(questionid, situationid)!=null){
 			for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
@@ -47,14 +47,14 @@ public class Main  {
 			for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
 				System.out.println(parser.getQuestion(questionid, situationid).getQuestinoline().get(ii));
 			int i = 0;
-			List<Ansver> ansvers = parser.getAnsversToSituation(situationid, questionid);
-			for (Ansver ansver : ansvers) {
+			List<Answer> anwers =  parser.getAnswersToSituation(situationid, questionid);
+			for (Answer answer : anwers) {
 				i++;
-				System.out.println("\t" + i + ansver.getAnsverlines());
+				System.out.println("\t" + i + answer.getAnswerlines());
 			}
 
 			while (true) {
-				System.out.println("Caracter infromation 0  or chose ansver number");
+				System.out.println("Character information 0  or choose answer number");
 				int hope;
 				try{
 				hope = Integer.parseInt(ov.input()) - 1;
@@ -63,12 +63,12 @@ public class Main  {
 				catch(Exception e){logger.info("Error number"); continue;}
 				while (hope == -1) {
 					i = 0;
-					System.out.println(caracter);
+					System.out.println(character);
 					for (int ii = 0; ii < parser.getQuestion(questionid, situationid).getQuestinoline().size(); ii++)
 						System.out.println(parser.getQuestion(questionid, situationid).getQuestinoline().get(ii));
-					for (Ansver ansver : ansvers) {
+					for (Answer answer : anwers) {
 						i++;
-						System.out.println("\n\t\t" + i + ansver.getAnsverlines());
+						System.out.println("\n\t\t" + i + answer.getAnswerlines());
 					}
 					try{
 						hope = Integer.parseInt(ov.input()) - 1;
@@ -79,17 +79,17 @@ public class Main  {
 						continue;}
 					if(hope>i) continue;
 						}
-				caracter.setEnergy(ansvers.get(hope).getEnergy());
-				caracter.setFuel(ansvers.get(hope).getFuel());
-				caracter.setInteligent(ansvers.get(hope).getInteligenc());
-				String nexthope = ansvers.get(hope).getCategory();
+				character.setEnergy(anwers.get(hope).getEnergy());
+				character.setFuel(anwers.get(hope).getFuel());
+				character.setIntelligence(anwers.get(hope).getIntelligence());
+				String nexthope = anwers.get(hope).getCategory();
 
 				if (nexthope.equals("true"))
-					{finis(true ,caracter.getInteligent());
+					{finish(true ,character.getIntelligence());
 					break;
 					}
 				else if (nexthope.equals("false"))
-					{finis(false ,caracter.getInteligent());
+					{finish(false ,character.getIntelligence());
 					break;}
 				else {
 					String[] splitednexthope = nexthope.split(" ");
@@ -106,14 +106,14 @@ public class Main  {
 
 					i = 0;
 					try {
-						ansvers = parser.getAnsversToSituation(situationid, questionid);
-						for (Ansver ansver : ansvers) {
+						anwers = parser.getAnswersToSituation(situationid, questionid);
+						for (Answer answer : anwers) {
 							i++;
-							System.out.println("\t" + i + ansver.getAnsverlines());
+							System.out.println("\t" + i + answer.getAnswerlines());
 
 						}
 					} catch (Exception e) {
-						logger.error("No ansver");
+						logger.error("No answer");
 						beta();
 						return false;
 					}
@@ -128,22 +128,22 @@ public class Main  {
 		Main main = new Main();
 		main.engine(args);
 
-		logger.info("SuccesFull");
+		logger.info("SuccessFull");
 		
 	   
 
 	}
 
-	public  String finis(boolean win , int inteligent) {
+	public  String finish(boolean win , int intelligence) {
 		String str;
 		
-		if (win && inteligent>=100)
-			str="Sikeresen teljesiteted a tárgyakat";
+		if (win && intelligence>=100)
+			str="Sikeresen teljesítetted a tárgyakat";
 		else if(!win)
-			str=("Sikertelenül teljesitetted a tárgyakat");
+			str=("Sikertelenül teljesítetted a tárgyakat");
 		else
-			str=("Eljutottál vizsgáig de az inteligenciád:"+inteligent
-					+" tul kicsi minimum 100 kell ezért vizsgakurzusra kerültél");
+			str=("Eljutottál vizsgáig de az intelligenciád:"+intelligence
+					+" túl kicsi, minimum 100 kell, ezért vizsgakurzusra kerültél");
 		System.out.println(str);
 		logger.info("Game-end:"+str);
 		
@@ -151,8 +151,8 @@ public class Main  {
 	}
 
 	public  void beta() {
-		logger.info("Game-end:"+"A játék beta verziólya végetért");
-		System.out.println("A játék beta verziólya végetért");
+		logger.info("Game-end:"+"A játék beta verziója véget ért");
+		System.out.println("A játék beta verziója véget ért");
 		
 	}
 

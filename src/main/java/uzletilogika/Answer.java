@@ -1,9 +1,9 @@
 package uzletilogika;
 
 /**
-* The Ansver contains an answer.
+* The Answer contains an answer.
 */
-public class Ansver {
+public class Answer {
 	/**
  	*The id of the answer.
  	*/
@@ -11,17 +11,17 @@ public class Ansver {
 	/**
 	 *The answer text of the answer.
 	 */
-	private String ansverlines;
+	private String answerlines;
 	/**
-	 *The modifier intelligence of the {@code Caracter}. 
+	 *The modifier intelligence of the {@code Character}. 
 	 */
-	private int inteligenc;
+	private int intelligence;
 	/**
-	 *The modifier energy of the {@code Caracter}.
+	 *The modifier energy of the {@code Character}.
 	 */
 	private int energy;
 	/**
-	 *The modifier fuel of the {@code Caracter}.
+	 *The modifier fuel of the {@code Character}.
 	 */
 	private int fuel;
 	/**
@@ -31,32 +31,32 @@ public class Ansver {
 	
 	
 	/**
-	 * Constructs an {@code Ansver} object.
+	 * Constructs an {@code Answer} object.
 	 */
-	public Ansver(){
+	public Answer(){
 		
 	}
 
 	@Override
 	public String toString() {
-		return "\nAnsver [id=" + id + ", \n\tansverlines=" + ansverlines + ",\n\t inteligenc=" + inteligenc + ",\n\t energy=" + energy
+		return "\nAnsver [id=" + id + ", \n\tansverlines=" + answerlines + ",\n\t inteligenc=" + intelligence + ",\n\t energy=" + energy
 				+ ",\n\t fuel=" + fuel + ",\n\t category=" + category + "]";
 	}
 	/**
-	 * Constructs an {@code Ansver} object.
+	 * Constructs an {@code Answer} object.
 	 *
 	 * @param id the id of the answer
-	 * @param ansverlines the text of the answer
-	 * @param inteligenc the modifier intelligence of the character
+	 * @param answerlines the text of the answer
+	 * @param intelligence the modifier intelligence of the character
 	 * @param energy the modifier energy of the character
 	 * @param fuel the modifier fuel of the character
 	 * @param category which chooses the new question
 	 */
-	public Ansver(int id, String ansverlines, int inteligenc, int energy, int fuel, String category) {
+	public Answer(int id, String answerlines, int intelligence, int energy, int fuel, String category) {
 		super();
 		this.id = id;
-		this.ansverlines = ansverlines;
-		this.inteligenc = inteligenc;
+		this.answerlines = answerlines;
+		this.intelligence = intelligence;
 		this.energy = energy;
 		this.fuel = fuel;
 		this.category = category;
@@ -84,37 +84,37 @@ public class Ansver {
 	 *
 	 * @return the string of this answer
 	 */
-	public String getAnsverlines() {
-		return ansverlines;
+	public String getAnswerlines() {
+		return answerlines;
 	}
 	/**
 	 * Sets the answer string of the answer.
 	 *
-	 * @param ansverlines the answer string of this answer
+	 * @param answerlines the answer string of this answer
 	 */
-	public void setAnsverlines(String ansverlines) {
-		this.ansverlines = ansverlines;
+	public void setAnswerlines(String answerlines) {
+		this.answerlines = answerlines;
 	}
 	/**
 	*Returns the modifiers value of intelligence.
 	*
 	*@return modifiers value of intelligence of {@code Caracter}
 	*/
-	public int getInteligenc() {
-		return inteligenc;
+	public int getIntelligence() {
+		return intelligence;
 	}
 	/**
 	*Sets the value of intelligence which belongs to this answer.
 	*
-	*@param inteligenc the value of intelligence of this answer
+	*@param intelligence the value of intelligence of this answer
 	*/
-	public void setInteligenc(int inteligenc) {
-		this.inteligenc = inteligenc;
+	public void setIntelligence(int intelligence) {
+		this.intelligence = intelligence;
 	}
 	/**
 	*Returns the modifiers value of energy.
 	*
-	*@return modifiers value of energy of {@code Caracter}
+	*@return modifiers value of energy of {@code Character}
 	*/	
 	public int getEnergy() {
 		return energy;
@@ -131,7 +131,7 @@ public class Ansver {
 	/**
 	*Returns the modifiers value of fuel.
 	*
-	*@return modifiers value of fuel of {@code Caracter}
+	*@return modifiers value of fuel of {@code Character}
 	*/
 	public int getFuel() {
 		return fuel;

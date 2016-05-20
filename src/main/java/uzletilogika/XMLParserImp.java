@@ -68,6 +68,7 @@ public class XMLParserImp implements XMLParser {
 		}
 
 	
+	@SuppressWarnings("unused")
 	@Override
 	public Question getQuestion(int qid , int sid) {
 		
@@ -103,9 +104,9 @@ public class XMLParserImp implements XMLParser {
 	}
 	
 	@Override
-	public List<Ansver> getAnsversToSituation(int situationid, int questinid) {
+	public List<Answer> getAnswersToSituation(int situationid, int questinid) {
 		
-		List<Ansver> ansvers = new ArrayList<Ansver>();
+		List<Answer> answers = new ArrayList<Answer>();
 		
 		NodeList nodelist1 = openFile("Situation");
 		try{
@@ -121,20 +122,20 @@ public class XMLParserImp implements XMLParser {
 				 {
 				 for(int j = 0 ; j< element1.getElementsByTagName("Ansver").getLength();j++){
 					 {
-						 Ansver ansver =new Ansver();
+						 Answer answer =new Answer();
 						 Element ans = (Element) element1.getElementsByTagName("Ansver").item(j);
-					 ansver.setAnsverlines(ans.getElementsByTagName("p").item(0).getTextContent());
-					 ansver.setEnergy(Integer.parseInt(ans.getElementsByTagName("energi").item(0).getTextContent()));
-					 ansver.setFuel(Integer.parseInt(ans.getElementsByTagName("fuel").item(0).getTextContent()));
-					 ansver.setId(Integer.parseInt(ans.getAttribute("id")));
-					 ansver.setInteligenc(Integer.parseInt(ans.getElementsByTagName("inteligencia").item(0).getTextContent()));
-					 ansver.setCategory(ans.getElementsByTagName("categori").item(0).getTextContent());
+					 answer.setAnswerlines(ans.getElementsByTagName("p").item(0).getTextContent());
+					 answer.setEnergy(Integer.parseInt(ans.getElementsByTagName("energi").item(0).getTextContent()));
+					 answer.setFuel(Integer.parseInt(ans.getElementsByTagName("fuel").item(0).getTextContent()));
+					 answer.setId(Integer.parseInt(ans.getAttribute("id")));
+					 answer.setIntelligence(Integer.parseInt(ans.getElementsByTagName("inteligencia").item(0).getTextContent()));
+					 answer.setCategory(ans.getElementsByTagName("categori").item(0).getTextContent());
 					
 					 
-					 ansvers.add(ansver);
+					 answers.add(answer);
 					 }
 				 }
-				return ansvers;}
+				return answers;}
 				}
 				}
 			}

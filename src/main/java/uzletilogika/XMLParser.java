@@ -37,9 +37,9 @@ public interface XMLParser {
 	 * Returns the list of answers for the question given in this situation.
 	 * @param questinid is the id of Question
 	 * @param situationid is the id of Situation
-	 * @return the {@code Ansver} list of the selected answers on question
+	 * @return the {@code Answer} list of the selected answers on question
 	 */
-	public List<Ansver> getAnsversToSituation(int situationid , int questinid);
+	public List<Answer> getAnswersToSituation(int situationid , int questinid);
 	
 	
 }
