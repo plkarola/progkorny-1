@@ -4,3 +4,5 @@
 target/
 info.log
 messages.log
+bin/
+classes/
