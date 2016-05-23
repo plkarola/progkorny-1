@@ -1,6 +1,7 @@
 package uzletilogika;
 
 import java.io.File;
+import java.io.InputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -34,27 +35,26 @@ public class XMLParserImp implements XMLParser {
 	/**
 	 * This is the file which is used by the methods. 
 	 */
-	public File xmlfile ;
+	public InputStream xmlfile ;
 	
 	@Override
 	public String basedir(){
 
-	String fileinput= System.getProperties().getProperty("user.dir").toString();
-	Path path = FileSystems.getDefault().getPath(fileinput,"/classes/InGame/InGame.xml");
-	xmlfile=new File(path.toString());
-	if(!xmlfile.isFile())
-		System.out.println("Please install game");
-	return  path.toString();
+	String basedir = null;
+	basedir = getClass().getClassLoader().getResource("InGame/InGame.xml").getFile();
+	
+	return  basedir;
 	}
 	
 	
 	@Override
 	public NodeList openFile( String name) {
+		
 		Document doc = null;
 		
 		try {
 			documentBuldar = factory.newDocumentBuilder();
-		
+			xmlfile=getClass().getClassLoader().getResourceAsStream("InGame/InGame.xml");
 			doc = documentBuldar.parse(xmlfile);
 
 		
